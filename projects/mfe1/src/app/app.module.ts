@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
-import {APP_ROUTES} from './app-routing.module';
+import {APP_ROUTES} from './app.routes';
 import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
 import {FlightsModule} from './flights/flights.module';

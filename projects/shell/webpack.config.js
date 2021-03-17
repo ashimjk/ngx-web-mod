@@ -17,29 +17,31 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      
-        // For remotes (please adjust)
-        // name: "shell",
-        // filename: "remoteEntry.js",
-        // exposes: {
-        //     './Component': './projects/shell/src/app/app.component.ts',
-        // },        
-        
-        // For hosts (please adjust)
-        // remotes: {
-        //     "mfe1": "mfe1@http://localhost:4200/remoteEntry.js",
 
-        // },
+      // For remotes (please adjust)
+      // name: "shell",
+      // filename: "remoteEntry.js",
+      // exposes: {
+      //     './Component': './projects/shell/src/app/app.component.ts',
+      // },
 
-        shared: {
-          "@angular/core": { singleton: true, strictVersion: true }, 
-          "@angular/common": { singleton: true, strictVersion: true }, 
-          "@angular/router": { singleton: true, strictVersion: true },
+      // For hosts (please adjust)
+      // remotes: {
+      //     "mfe1": "mfe1@http://localhost:4200/remoteEntry.js",
+      // },
 
-          ...sharedMappings.getDescriptors()
-        }
-        
+      shared: {
+        "@angular/core": {singleton: true, strictVersion: true},
+        "@angular/common": {singleton: true, strictVersion: true},
+        "@angular/router": {singleton: true, strictVersion: true},
+
+        // Uncomment for sharing lib of an Angular CLI or Nx workspace
+        ...sharedMappings.getDescriptors()
+      }
+
     }),
+
+    // Uncomment for sharing lib of an Angular CLI or Nx workspace
     sharedMappings.getPlugin(),
   ],
 };
