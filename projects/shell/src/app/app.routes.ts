@@ -12,18 +12,18 @@ export const APP_ROUTES: Routes = [
 
   // Your route here:
 
-  // {
-  //   path: 'flights',
-  //   // loadChildren: () => import('mfe1/Module').then(m => m.FlightsModule)
-  //   loadChildren: () =>
-  //     loadRemoteModule({
-  //       // remoteEntry: 'http://localhost:3000/remoteEntry.js',
-  //       remoteName: 'mfe1',
-  //       exposedModule: './Module'
-  //     })
-  //       .then(m => m.FlightsModule)
-  //
-  // },
+  {
+    path: 'flights',
+    loadChildren: () => import('mfe1/Module').then(m => m.FlightsModule)
+    //   loadChildren: () =>
+    //     loadRemoteModule({
+    //       // remoteEntry: 'http://localhost:3000/remoteEntry.js',
+    //       remoteName: 'mfe1',
+    //       exposedModule: './Module'
+    //     })
+    //       .then(m => m.FlightsModule)
+    //
+  },
 
 
   {

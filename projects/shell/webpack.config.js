@@ -26,9 +26,9 @@ module.exports = {
       // },
 
       // For hosts (please adjust)
-      // remotes: {
-      //     "mfe1": "mfe1@http://localhost:4200/remoteEntry.js",
-      // },
+      remotes: {
+        "mfe1": "mfe1@http://localhost:3000/remoteEntry.js",
+      },
 
       shared: {
         "@angular/core": {singleton: true, strictVersion: true},
