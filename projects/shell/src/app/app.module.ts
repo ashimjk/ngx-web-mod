@@ -6,11 +6,13 @@ import {AppComponent} from './app.component';
 import {RouterModule} from '@angular/router';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {HomeComponent} from './home/home.component';
+import {ConfigComponent} from './config/config.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    ConfigComponent,
     NotFoundComponent
   ],
   imports: [

@@ -1,17 +1,34 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {MicroFrontend} from './micro-frontends/micro-frontend';
+import {Router} from '@angular/router';
+import {LookupService} from './micro-frontends/lookup.service';
+import {buildRoutes} from './util/menu-util';
 
 @Component({
   selector: 'app-root',
   template: `
-    <img src="../assets/angular.png" width="50" style="padding-top: 10px">
-    <div>
-      <button routerLink="/">Home</button>
-      <span style="padding-right: 10px"></span>
-      <button routerLink="/flights/flights-search">Flights</button>
-    </div>
+    <ul>
+      <li><img src="../assets/angular.png" width="50px" alt="angular"></li>
+      <li><a routerLink="/">Home</a></li>
+      <li *ngFor="let mfe of microFrontends"><a [routerLink]="mfe.routePath">{{mfe.displayName}}</a></li>
+      <li><a routerLink="/config">Config</a></li>
+    </ul>
 
     <router-outlet></router-outlet>
   `
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
+  microFrontends: MicroFrontend[] = [];
+
+  constructor(
+    private router: Router,
+    private lookupService: LookupService) {
+  }
+
+  async ngOnInit(): Promise<void> {
+    this.microFrontends = await this.lookupService.lookup();
+    const routes = buildRoutes(this.microFrontends);
+    this.router.resetConfig(routes);
+  }
 }
