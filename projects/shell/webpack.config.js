@@ -26,8 +26,10 @@ module.exports = {
       // },
 
       // For hosts (please adjust)
+      // remoteType: "var",
       remotes: {
-        "mfe1": "mfe1@http://localhost:3000/remoteEntry.js",
+        "mfe1": "mfe1@http://localhost:3000/remoteEntry.js"
+        // "mfe1": "mfe1"
       },
 
       shared: {
