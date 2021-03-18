@@ -14,7 +14,7 @@
     "webpack": "^5.0.0"
   },
   "dependencies": {
-    "@angular-architects/module-federation": "1.2.3",
+    "@corpay/module-federation": "1.2.1",
     "@angular/animations": "~11.2.4",
     "@angular/common": "~11.2.4",
     "@angular/compiler": "~11.2.4",

@@ -1,5 +1,5 @@
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
-const mf = require("@angular-architects/module-federation/webpack");
+const mf = require("@corpay/module-federation/webpack");
 const path = require("path");
 
 const sharedMappings = new mf.SharedMappings();
