@@ -3,6 +3,7 @@ import {MicroFrontend} from './micro-frontends/micro-frontend';
 import {Router} from '@angular/router';
 import {LookupService} from './micro-frontends/lookup.service';
 import {buildRoutes} from './util/menu-util';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -22,8 +23,13 @@ export class AppComponent implements OnInit {
   microFrontends: MicroFrontend[] = [];
 
   constructor(
+    private translateService: TranslateService,
     private router: Router,
     private lookupService: LookupService) {
+
+    translateService.addLangs(['en']);
+    translateService.setDefaultLang('en');
+    translateService.use('en');
   }
 
   async ngOnInit(): Promise<void> {

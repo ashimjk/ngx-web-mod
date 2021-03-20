@@ -3,18 +3,22 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "start:mfe1": "ng serve mfe1 --port 3000 -o",
+    "start:shell": "ng serve shell --port 5000  -o",
+    "build:mfe1": "ng build mfe1 --prod",
+    "build:shell": "ng build shell --prod",
+    "start": "concurrently \"npm run start:mfe1\" \"npm run start:shell\" ",
+    "build": "concurrently \"npm run build:mfe1\" \"npm run build:shell\" ",
+    "start:prod": "concurrently \"http-server -p 3000 dist/mfe1\" \"http-server -p 5000 dist/shell\" "
   },
   "private": true,
   "resolutions": {
     "webpack": "^5.0.0"
   },
   "dependencies": {
-    "@corpay/module-federation": "1.2.1",
     "@angular/animations": "~11.2.4",
     "@angular/common": "~11.2.4",
     "@angular/compiler": "~11.2.4",
@@ -23,6 +27,9 @@
     "@angular/platform-browser": "~11.2.4",
     "@angular/platform-browser-dynamic": "~11.2.4",
     "@angular/router": "~11.2.4",
+    "@corpay/module-federation": "1.2.1",
+    "@ngx-translate/core": "13.0.0",
+    "@ngx-translate/http-loader": "6.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
@@ -34,6 +41,7 @@
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
+    "concurrently": "^6.0.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~6.1.0",
