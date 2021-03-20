@@ -13,6 +13,7 @@ import {TranslateService} from '@ngx-translate/core';
       <li><a routerLink="/">Home</a></li>
       <li *ngFor="let mfe of microFrontends"><a [routerLink]="mfe.routePath">{{mfe.displayName}}</a></li>
       <li><a routerLink="/config">Config</a></li>
+      <li><a routerLink="/plugin">Plugin</a></li>
     </ul>
 
     <router-outlet></router-outlet>

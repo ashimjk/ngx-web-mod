@@ -1,8 +1,6 @@
 import {Routes} from '@angular/router';
 import {HomeComponent} from './home/home.component';
-import {NotFoundComponent} from './not-found/not-found.component';
 import {ConfigComponent} from './config/config.component';
-import {loadRemoteModule} from '@corpay/module-federation';
 
 export const APP_ROUTES: Routes = [
   {
@@ -14,6 +12,10 @@ export const APP_ROUTES: Routes = [
     path: 'config',
     component: ConfigComponent
   },
+  {
+    path: 'plugin',
+    loadChildren: () => import('./plugin/plugin.module').then(m => m.PluginModule)
+  }
   // {
   //   path: 'flights',
   //   loadChildren: () =>

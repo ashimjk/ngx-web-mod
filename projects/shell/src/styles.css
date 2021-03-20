@@ -1,4 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
 body {
   font-family: 'Comfortaa', cursive;
   padding-top: 80px;
@@ -39,6 +38,63 @@ li a:hover {
 }
 
 pre {
-  background-color: lightgray;
+  background-color: #eee;
   padding: 10px;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  /*display: inline-block;*/
+  padding: 3px;
+
+  float: left;
+  margin: 20px;
+  margin-top: 60px
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.task img {
+  height: 100px;
+}
+
+.task p {
+  font-weight: bold;
+  text-align: center;
+}
+
+.vertical-menu {
+  width: 200px; /* Set a width if you like */
+  float: left;
+  margin-right: 50px;
+}
+
+.vertical-menu a {
+  background-color: #eee; /* Grey background color */
+  color: black; /* Black text color */
+  display: block; /* Make the links appear below each other */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.vertical-menu a:hover {
+  background-color: #ccc; /* Dark grey background on mouse-over */
+}
+
+.vertical-menu a.active {
+  background-color: #333; /* Add a green color to the "active/current" link */
+  color: white;
+}
+
+a {
+  cursor: pointer;
+}
+
+app-plugin-proxy {
+  float: left;
+  margin: 20px;
 }
