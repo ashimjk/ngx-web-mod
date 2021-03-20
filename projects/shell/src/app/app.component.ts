@@ -9,7 +9,7 @@ import {TranslateService} from '@ngx-translate/core';
   selector: 'app-root',
   template: `
     <ul>
-      <li><img src="../assets/angular.png" width="50px" alt="angular"></li>
+      <li><img src="assets/angular.png" width="50px" alt="angular"></li>
       <li><a routerLink="/">Home</a></li>
       <li *ngFor="let mfe of microFrontends"><a [routerLink]="mfe.routePath">{{mfe.displayName}}</a></li>
       <li><a routerLink="/config">Config</a></li>

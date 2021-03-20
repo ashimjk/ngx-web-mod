@@ -6,7 +6,7 @@ import {PluginLookupService} from '../plugin-lookup.service';
   selector: 'app-plugin-container',
   template: `
     <ul>
-      <li><img src="../../../assets/angular.png" width="50"></li>
+      <li><img src="assets/angular.png" width="50"></li>
       <li><a href="#">Plugin-based Workflow Designer</a></li>
       <li><a (click)="toggle()">Toggle Config</a></li>
     </ul>

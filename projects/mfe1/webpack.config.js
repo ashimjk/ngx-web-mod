@@ -23,6 +23,8 @@ module.exports = {
       filename: "remoteEntry.js",
       exposes: {
         './Module': './projects/mfe1/src/app/flights/flights.module.ts',
+        './Download': './projects/mfe1/src/app/components/download.component.ts',
+        './Upload': './projects/mfe1/src/app/components/upload.component.ts'
       },
 
       // For hosts (please adjust)
