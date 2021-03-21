@@ -1,5 +1,6 @@
 import {Component, ComponentFactoryResolver, Inject, Injector, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
+import {BsModalService} from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-flights-search',
@@ -16,6 +17,7 @@ export class FlightsSearchComponent implements OnInit {
 
   constructor(
     // private service: AuthLibService,
+    private modal: BsModalService,
     private translateService: TranslateService,
     @Inject(Injector) private injector: Injector,
     @Inject(ComponentFactoryResolver) private cfr: ComponentFactoryResolver) {

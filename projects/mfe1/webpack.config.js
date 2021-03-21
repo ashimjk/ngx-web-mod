@@ -37,6 +37,7 @@ module.exports = {
         "@angular/router": {singleton: true, strictVersion: true},
         "@ngx-translate/core": {singleton: true, strictVersion: true},
         "@ngx-translate/http-loader": {singleton: true, strictVersion: true},
+        "ngx-bootstrap/modal": {singleton: true, strictVersion: true},
 
         // Uncomment for sharing lib of an Angular CLI or Nx workspace
         ...sharedMappings.getDescriptors()

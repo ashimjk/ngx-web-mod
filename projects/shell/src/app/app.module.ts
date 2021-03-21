@@ -10,6 +10,7 @@ import {ConfigComponent} from './config/config.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {ModalModule} from 'ngx-bootstrap/modal';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
@@ -32,7 +33,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    ModalModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
