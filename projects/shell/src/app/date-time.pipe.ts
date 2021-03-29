@@ -25,21 +25,25 @@ export class DateTimePipe implements PipeTransform {
   }
 
   private transformDate(value: string, columnType: GridColumnType | string | undefined): any {
-    let transformDate: string | null = value;
+    let transformDate: string | null = new Date(value).toString() === 'Invalid Date' ? null : value;
 
     const checker = {
-      ifColumnTypeMatchesThen(gridColumnType: string, dateTimeTransform: (value: string) => (string | null)): any {
-        if (value && columnType && columnType === gridColumnType) {
-          transformDate = dateTimeTransform(value);
+      ifColumnTypeMatchesThen(gridColumnType: string, dateTimeTransform: (data: string) => (string | null)): any {
+        if (transformDate && columnType && columnType === gridColumnType) {
+          transformDate = dateTimeTransform(transformDate);
         }
+
         return checker;
       },
+
       ifInvalid(defaultValue: string): any {
-        if (!value || value.toString() === 'Invalid Date') {
+        if (!transformDate) {
           transformDate = defaultValue;
         }
+
         return checker;
       },
+
       getDate(): string | null {
         return transformDate;
       }
